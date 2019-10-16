@@ -1,0 +1,23 @@
+.app-header {
+  &__main {
+    position: relative;
+    background-color: mat-color($adminconsole-primary, 700);
+    color: mat-contrast($adminconsole-primary,700);
+    & > .container {
+      box-sizing: content-box!important;
+    }
+  }
+  &__sub {
+    background-color: mat-color($adminconsole-primary, 500);
+    color: mat-contrast($adminconsole-primary,700);
+  }
+  &__title {
+    margin: 0;
+  }
+  &__subtitle {
+    margin: 0;;
+  }
+  mat-toolbar-row {
+    padding: 0;
+  }
+}

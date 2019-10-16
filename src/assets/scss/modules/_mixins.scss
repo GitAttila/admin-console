@@ -45,3 +45,11 @@
       @content;
   }
 }
+
+@mixin gradientRadial($fromColor, $toColor) {
+  background: $fromColor;
+  background: -moz-radial-gradient(center, ellipse cover,  $fromColor, $toColor 100%);
+  background: -webkit-radial-gradient(center, ellipse cover,  $fromColor 0%,$toColor 100%);
+  background: radial-gradient(ellipse at center,  $fromColor 0%, $toColor 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$fromColor', endColorstr='$toColor', GradientType=1 );
+}

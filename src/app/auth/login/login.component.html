@@ -1,0 +1,52 @@
+<section class="app-login__wrapper" fxLayoutAlign = "center center">
+  <div
+    class="app-login mat-elevation-z6"
+    [ngStyle.xs] = "{'height': '100%'}"
+    fxFlex.xs = "100%"
+    fxFlex.sm = "50%"
+    fxFlex.md = "40%"
+    fxFlex.gt-md = "450px">
+    <form
+      [formGroup] = "loginForm"
+      (ngSubmit)= "onSubmit()"
+      fxLayout="column"
+      fxLayoutGap = "0.5rem">
+      <h2 class="app-login__title mat-title">{{loginTitle}}</h2>
+      <h3 class="app-login__subtitle mat-subheading-1">{{loginSubtitle}}</h3>
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          placeholder ="email"
+          formControlName = "email">
+          <mat-error>{{getErrMsg()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          [type]="hidePass ? 'password' : 'text'"
+          placeholder = "password"
+          formControlName = "password">
+          <button
+            mat-icon-button
+            matSuffix
+            type="button"
+            (click) = "hidePass = !hidePass">
+            <mat-icon>{{hidePass ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-error>Please, enter your password.</mat-error>
+      </mat-form-field>
+      <button
+        mat-raised-button
+        [disabled] = "loginForm.invalid"
+        color="accent">
+        <span *ngIf="!isLoading">LOGIN</span>
+        <span *ngIf="isLoading">
+            <mat-spinner class="spinner" diameter = "24" color="primary"></mat-spinner>
+        </span>
+      </button>
+    </form>
+  </div>
+  <div class="app-login__overlay"></div>
+</section>
+

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { viewClassName } from '@angular/compiler';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -8,10 +8,14 @@ import { viewClassName } from '@angular/compiler';
   encapsulation: ViewEncapsulation.None
 })
 export class HeaderComponent implements OnInit {
-  title = 'Kristýna Erbenová';
+  title = 'Krystína Erbenová';
   subtitle = 'site admin console';
 
-  constructor() { }
+  constructor(private authSvc: AuthService) { }
+
+  onExitBtnClicked() {
+    this.authSvc.logout();
+  }
 
   ngOnInit() {
   }
