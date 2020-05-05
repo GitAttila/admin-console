@@ -1,0 +1,50 @@
+.main-logo {
+  font-size: 1.8rem;
+  line-height: 2rem;
+  letter-spacing: 0.2rem;
+  font-weight: 100;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  &__text {
+    text-transform: lowercase;
+    color: mat-color($adminconsole-foreground, text, 0.5);
+    &--blur {
+      filter: blur(2px);
+      transition: filter 0.3s ease-out;
+    }
+  }
+  &__frame {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 3.8rem;
+    width: 3.8rem;
+    border: 1px solid mat-color($adminconsole-foreground, text, 0.4);
+    transition: border-color 0.3s ease-out;
+  }
+  &__text-offset-kris {
+    margin-left: 0.4rem;
+  }
+  &__text-offset-erb {
+    margin-left: 0.8rem;
+  }
+  &__text-offset-tyna {
+    margin-left: 0.1rem;
+  }
+  &__text-offset-enova {
+    margin-left: 0.1rem;
+  }
+  &:hover {
+    .main-logo__text--blur {
+      filter: blur(0);
+    }
+    .main-logo__text--blur {
+      color: mat-color($adminconsole-primary, 500);
+    }
+    .main-logo__frame {
+      border-color: mat-color($adminconsole-primary, 500);
+    }
+  }
+}
+

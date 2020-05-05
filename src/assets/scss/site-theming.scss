@@ -1,11 +1,11 @@
 @import '~@angular/material/theming';
 
 @include mat-core();
-$adminconsole-primary: mat-palette($mat-grey);
-$adminconsole-accent: mat-palette($mat-deep-orange);
+$adminconsole-primary: mat-palette($mat-light-blue);
+$adminconsole-accent: mat-palette($mat-amber);
 $adminconsole-warn: mat-palette($mat-red);
 $adminconsole-theme: mat-light-theme($adminconsole-primary, $adminconsole-accent, $adminconsole-warn);
-$foreground: map-get($adminconsole-theme, foreground);
-$background: map-get($adminconsole-theme, background);
+$adminconsole-foreground: map-get($adminconsole-theme, foreground);
+$adminconsole-background: map-get($adminconsole-theme, background);
 
 @include angular-material-theme($adminconsole-theme);

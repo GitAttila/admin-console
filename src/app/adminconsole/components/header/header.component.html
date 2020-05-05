@@ -1,0 +1,23 @@
+<div class="app-header">
+  <mat-toolbar>
+      <mat-toolbar-row class = "app-header__main mat-elevation-z5">
+          <div class="container" fxLayoutAlign = "space-between center">
+            <div class="app-header__avatar-wrapper" fxLayout="row" fxLayoutAlign="left center">
+              <div class="app-header__avatar__logo" ><img src="../../../assets/images/kriserb_logo_white.png" alt="logo KE"></div>
+              <div class="app-header__title mat-h1">{{title}}</div>
+            </div>
+            <button
+              (click) = "onExitBtnClicked()"
+              mat-icon-button>
+                <mat-icon>exit_to_app</mat-icon>
+            </button>
+          </div>
+      </mat-toolbar-row>
+      <mat-toolbar-row class = "app-header__sub">
+        <div class="container">
+          <span class="app-header__subtitle mat-h3">{{subtitle}}</span>
+        </div>
+      </mat-toolbar-row>
+  </mat-toolbar>
+</div>
+

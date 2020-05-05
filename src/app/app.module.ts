@@ -4,23 +4,27 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AngularMaterialModule } from './angular-material.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
+import { HeaderComponent } from './adminconsole/components/header/header.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { LoginComponent } from './auth/login/login.component';
+import { LoginComponent } from './adminconsole/components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { IntroComponent } from './components/intro/intro.component';
-import { AuthService } from './auth/auth.service';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireAuthModule } from '@angular/fire/auth';
-import { environment } from '../environments/environment';
-import { UIService } from './services/ui.service';
+import { AdminConsoleComponent } from './adminconsole/components/adminconsole/adminconsole.component';
+import { AuthService } from './adminconsole/auth/auth.service';
+// import { AngularFireModule } from '@angular/fire';
+// import { AngularFireAuthModule } from '@angular/fire/auth';
+// import { environment } from '../environments/environment';
+import { UIService } from './adminconsole/services/ui.service';
+import { WebSiteComponent } from './website/components/web-site/web-site.component';
+import { SiteHeaderComponent } from './website/components/site-header/site-header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LoginComponent,
-    IntroComponent
+    AdminConsoleComponent,
+    WebSiteComponent,
+    SiteHeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -29,8 +33,8 @@ import { UIService } from './services/ui.service';
     ReactiveFormsModule,
     AngularMaterialModule,
     FlexLayoutModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule
+    // AngularFireModule.initializeApp(environment.firebase),
+    // AngularFireAuthModule
   ],
   providers: [
     AuthService,

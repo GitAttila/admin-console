@@ -1,0 +1,44 @@
+app-site-header {
+  .app-site-header {
+    color: mat-color($adminconsole-foreground, text);
+    background-color: transparent;
+    &__wrapper {
+      height: 100%;
+    }
+    &__container {
+      width: 100%;
+      height: 100%;
+    }
+    &__avatar {
+      &-wrapper {
+        height: 3rem;
+        img {
+          height: 100%;
+        }
+      }
+      &__logo {
+        height: 100%;
+        margin-right: 1rem;
+      }
+    }
+    &__title {
+      margin: 0;
+    }
+    &--material {
+      background-color: mat-color($adminconsole-primary, 700);
+      color: mat-contrast($adminconsole-primary,700);
+    }
+    &--site {
+      height: 6rem;
+      .app-site-header__wrapper {
+        background-image: -webkit-linear-gradient(left, rgb(128, 128, 128) 40%, rgba(255, 255, 255, 0) 20%);
+        background-image: -webkit-linear-gradient(left, rgb(128, 128, 128) 25%, rgba(255, 255, 255, 0) 0%);
+        background-image: linear-gradient(to right, rgb(128, 128, 128) 25%, rgba(255, 255, 255, 0) 0%);
+        background-position: bottom;
+        background-size: 5px 1px;
+        background-repeat: repeat-x;
+      }
+    }
+  }
+}
+

@@ -2,21 +2,21 @@
   position: relative;
   z-index: 100;
   padding: 2rem;;
-  background-color: mat-color($background, dialog);
+  background-color: mat-color($adminconsole-background, dialog);
   &__wrapper {
-    position: absolute;
+    position: fixed;
     z-index: 1000;
     left: 0;
     top: 0;
     height: 100%;
     width: 100%;
-    @include gradientRadial(mat-color($adminconsole-primary, 300), mat-color($adminconsole-primary, 800));
+    @include gradientRadial(mat-color($adminconsole-primary, 300), mat-color($adminconsole-primary, 900));
   }
   &__title {
-    color: mat-color($foreground, text);
+    color: mat-color($adminconsole-foreground, text);
   }
   &__subtitle{
-    color: mat-color($foreground, text, 0.5);
+    color: mat-color($adminconsole-foreground, text, 0.5);
   }
   &__overlay {
     position: absolute;
@@ -25,6 +25,16 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: transparent;
+    &--logo-wallpaper {
+      background: url(assets/images/kriserb_logo_white.png);
+      background-repeat: repeat;
+      background-size: 8rem;
+      opacity: 0.2;
+      transform: translate(0%, 0%) rotate(-45deg);
+      transform-origin: left;
+      width: 400%;
+      height: 400%;
+      filter: grayscale(1);
+    }
   }
 }

@@ -1,0 +1,30 @@
+<!-- <div fxLayout="column"> -->
+
+  <app-site-header [config] = "headerConfig">
+  </app-site-header>
+
+  <ng-container>
+
+
+      <mat-sidenav-container>
+
+        <mat-sidenav #sidenav role="navigation">
+          <mat-nav-list>
+            <a mat-list-item routerLink="." *ngFor="let nav of siteNavigation">{{nav}}</a>
+          </mat-nav-list>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+          <button (click)="sidenav.toggle()">show sidenav</button>
+          <p>{{content}}</p>
+          <router-outlet></router-outlet>
+        </mat-sidenav-content>
+
+      </mat-sidenav-container>
+
+  </ng-container>
+
+
+<!-- </div> -->
+
+

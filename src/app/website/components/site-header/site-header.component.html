@@ -1,0 +1,66 @@
+
+<mat-toolbar
+  class="app-site-header mat-elevation-z5"
+  [ngClass]="{
+    'mat-elevation-z5': config.type==='material',
+    'app-site-header--material':config.type==='material',
+    'app-site-header--site': config.type==='site'}">
+  <div
+    class="app-site-header__container"
+    fxLayout = "row"
+    fxLayoutAlign = "center center">
+    <div
+      class="app-site-header__wrapper"
+      fxLayout = "row"
+      fxLayoutAlign = "space-between center"
+      fxFlex.lt-md = "100%"
+      fxFlex.lt-lg = "90%"
+      fxFlex.lt-xl = "67%"
+      fxFlex.gt-lg = "1440px">
+      <span
+        class="app-site-header__avatar-wrapper"
+        fxLayout="row"
+        fxLayoutAlign="left center">
+
+        <span
+          *ngIf ="!config.logo?.src"
+          class="main-logo">
+          <span class="main-logo__text">
+              <span class="main-logo__text--blur main-logo__text-offset-kris">Kris</span>
+              <span class="main-logo__text-offset-tyna">týna</span>
+              <br>
+              <span class="main-logo__text--blur main-logo__text-offset-erb">Erb</span>
+              <span class="main-logo__text-offset-enova">enová</span>
+          </span>
+          <div class="main-logo__frame"></div>
+        </span>
+
+        <div
+          *ngIf ="config.logo?.src"
+          class="app-site-header__avatar__logo" >
+          <img [src]="config.logo.src" [alt]="config.logo.alt">
+        </div>
+        <h1
+          *ngIf ="config.title"
+          class="app-site-header__title mat-h1">
+          {{config.title}}
+        </h1>
+      </span>
+      <span class="app-site-header__btns-wrapper">
+
+        <ng-container *ngIf ="config.iconbtns.length > 0">
+          <button
+            mat-icon-button
+            *ngFor="let iconButton of config.iconbtns"
+            [disabled] = "iconButton.disabled">
+            <mat-icon>{{iconButton.icon}}</mat-icon>
+          </button>
+        </ng-container>
+
+      </span>
+    </div>
+  </div>
+
+</mat-toolbar>
+
+

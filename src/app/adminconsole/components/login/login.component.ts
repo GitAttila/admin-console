@@ -1,14 +1,13 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { AuthService } from '../auth.service';
-import { logging } from 'protractor';
+import { AuthService } from '../../auth/auth.service';
 import { UIService } from '../../services/ui.service';
 import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  encapsulation: ViewEncapsulation.None
 })
 export class LoginComponent implements OnInit, OnDestroy {
   public loginForm: FormGroup;
@@ -33,15 +32,15 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
-    this.authSvc.login({
-      email: this.loginForm.value.email,
-      password: this.loginForm.value.password
-    });
+    // this.authSvc.login({
+    //   email: this.loginForm.value.email,
+    //   password: this.loginForm.value.password
+    // });
   }
 
   ngOnInit() {
-    this.loginTitle = 'Login';
-    this.loginSubtitle = 'Administration of CEZ web site';
+    this.loginTitle = 'Login to admin console';
+    this.loginSubtitle = 'Administration of Kristýna Erbenová web site';
     this.loginForm = new FormGroup({
       email: new FormControl('', {
         validators: [Validators.required, Validators.email]
